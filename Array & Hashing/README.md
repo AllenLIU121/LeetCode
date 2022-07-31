@@ -1,4 +1,4 @@
-# Problems                                          Status
+# Problems                                                       
 ## Contains Duplicate	
 ## Valid Anagram	
 ## Two Sum	
