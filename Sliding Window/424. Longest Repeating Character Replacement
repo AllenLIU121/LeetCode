@@ -1,0 +1,17 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        maxlen, maxfreq = 0, 0
+        count = {}
+        pointer = 0
+        
+        for i in range(len(s)):
+            count[s[i]] = 1 + count.get(s[i], 0)
+            maxfreq = max(maxfreq, count[s[i]])
+            
+            if (i-pointer+1) - maxfreq > k:
+                count[s[pointer]] -= 1
+                pointer += 1
+            
+            maxlen = max(maxlen, (i-pointer+1))
+            
+        return maxlen
