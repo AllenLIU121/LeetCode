@@ -1,3 +1,7 @@
+# deque(LIFO): left -> right : 0 -> n
+               pop from right and append into right
+
+
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         de = deque()
@@ -13,6 +17,6 @@ class Solution:
                     de.popleft()
         return res
         
-        
+
      
         
