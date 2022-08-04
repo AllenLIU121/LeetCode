@@ -1,0 +1,18 @@
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        de = deque()
+        res = []   
+        for i,val in enumerate(nums):
+            while de and de[-1] < val:
+                de.pop()
+            de.append(val)
+          
+            if i >= k-1:
+                res.append(de[0])
+                if nums[i-k+1] == de[0]:
+                    de.popleft()
+        return res
+        
+        
+     
+        
